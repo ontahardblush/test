@@ -1,0 +1,146 @@
+LIST alleyJobList = (homelessHandjobs), maidFreakout
+LIST koboldcaveJobList = kcScoutCave, kcSearch, kcRevenge, kcMeetKing, kcDanceKing
+LIST RESERVED = name, describe, aspect, divert, required, cost,duration,greeting,talk,conversation
+LIST modifier = orkStink, cumCovered, assGaped, pussyGaped
+=== function define(object,method)
+{object:
+    - cleanStables: {method:
+        - name:         ~return "Clean The Stables"
+        - describe:     ~return "Clean out the Local stable yard for the Tavern Keeper"
+        - required:     ~return (three, a, b, c)
+        - cost:         ~return 20
+        - duration:     ~return 1
+        - divert:       ~return -> cleanStablesJob
+    }
+    - tavernWaitress: {method:
+        - name:         ~return "Tavern Waitress"
+        - describe:     ~return "Spend the day as a Tavern Waitress at the local Tavern"
+        - required:     ~return (one, a) 
+        - cost:         ~return 20
+        - duration:     ~return 1
+        - divert:       ~return -> tavernWaitressJob
+    }
+    - gutterWench: {method:
+        - name:         ~return "Gutter Wench"
+        - describe:     ~return "Gutter"
+        - required:     ~return (two, a)
+        - cost:         ~return 20
+        - duration:     ~return 1
+        - divert:       ~return -> gutterWenchJob
+    }
+    - homelessHandjobs: {method:
+        - name:         ~return "Homeless Handjobs"
+        - describe:     ~return "Homeleass "
+        - required:     ~return (two, a)
+        - cost:         ~return 20
+        - duration:     ~return 1
+        - divert:       ~return -> homelessHandjobsJob
+    }
+    - maidFreakout: {method:
+        - name:         ~return "Maid Freakout"
+        - describe:     ~return "Gutter"
+        - required:     ~return (two, a)
+        - cost:         ~return 20
+        - duration:     ~return 1
+        - divert:       ~return -> gutterWenchJob
+    }
+
+    - kcScoutCave: {method:
+        - name:         ~return "Scout Cave"
+        - describe:     ~return ""
+        - required:     ~return (one)
+        - cost:         ~return 0
+        - duration:     ~return 2
+        - divert:       ~return 
+    }    
+    - kcSearch: {method:
+        - name:         ~return "Kobold Search"
+        - describe:     ~return ""
+        - required:     ~return ()
+        - cost:         ~return 0
+        - duration:     ~return 2
+        - divert:       ~return 
+    }    
+    - kcRevenge: {method:
+        - name:         ~return "Kobold Revenge"
+        - describe:     ~return ""
+        - required:     ~return (one)
+        - cost:         ~return 0
+        - duration:     ~return 2
+        - divert:       ~return 
+    }    
+    - kcMeetKing: {method:
+        - name:         ~return "Meet King"
+        - describe:     ~return ""
+        - required:     ~return (one)
+        - cost:         ~return 0
+        - duration:     ~return 2
+        - divert:       ~return 
+    }    
+    - kcDanceKing: {method:
+        - name:         ~return "Dance for King"
+        - describe:     ~return ""
+        - required:     ~return (one)
+        - cost:         ~return 0
+        - duration:     ~return 2
+        - divert:       ~return 
+    }    
+    - neri: {method:
+        - name:         ~return "Neri"
+        - describe:     ~return ""
+        - greeting:     ~return "{~Hi!|Hey!}"
+        - talk:       ~return -> nericonversation.talk
+    }    
+    - day: {method:
+        - name:         ~return "Day"
+    }    
+    - night: {method:
+        - name:         ~return "Night"
+    }    
+    - one: {method:
+        - name:         ~return "Level 1"
+    }    
+    - two: {method:
+        - name:         ~return "Level 2"
+    }    
+    - three: {method:
+        - name:         ~return "Level 3"
+    }    
+    
+    - cumCovered: {method:
+        - name:         ~return "Cum Covered"
+        - describe:     ~return "Covered in Cum"
+        - required:     ~return (twodays,bath)
+    }        
+    - pussyGaped: {method:
+        - name:         ~return "Pussy Gaped"
+        - describe:     ~return "Asshole stretched open wide."
+        - required:     ~return (oneday,sleep)
+    }    
+    - assGaped: {method:
+        - name:         ~return "Ass Gaped"
+        - describe:     ~return "Asshole stretched open wide."
+        - required:     ~return (oneday,sleep)
+    }    
+    - orkStink: {method:
+        - name:         ~return "Ork Stink"
+        - describe:     ~return "The scent of Ork cock."
+        - required:     ~return (fourdays,bath)
+    }        
+    -else: ~return
+    
+}
+
+// - Clean stables
+// - Handjobs for the homeless
+// - Maid fakeout (demon sacrifice)
+// - Waitress at tavern
+// - Magical practice dummy
+// - Combat slimes
+// - Ghost buster
+// - Maid service
+// - Scout the cave
+// - Search for treasure - cave in!
+// - Revenge on those nasty Kobolds!
+// - Meet with the Kobold King!
+// - Dance for the Kobold King!

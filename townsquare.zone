@@ -1,0 +1,12 @@
+=== TownSquare
+
+Heart of the town and home to all manner of competing merchants, festivals, and faiths.
+
+{The crowded market is abuzz with the sounds of trade and discourse, from hawkers yelling their latest deals to impromptu political debate.|Leather heels and wagons wheels grinding ad infinitum against worn cobbles, the endless sounds of travel and commerce.|Perfumed nobels pass by unwashed beggars, while a poor merchant’s rotting vegetables sit untouched next to the fragrant fruit of his successful neighbor. The market is an assault on the senses in every way.|A myriad of colors, creeds, and fashions all ebb and flow within a sea of people.Market stalls cast shade over buyers and wares of all types.|Everything is centered around the great fountain, a marble basin full of tarnished coins representing the wishes of the desperate and foolhardy.}
+-(top)
++ (jobboard) [Job Board]
+    Nothing of interest here...
+    -> top
++ (back) [Back] -> Game.visit
+
+- ->->

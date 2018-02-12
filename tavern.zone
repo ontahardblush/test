@@ -1,0 +1,12 @@
+=== Tavern
+
+A crowded tavern off the high street, infamous for its cheap booze and loose rules.
+
+{~A hum of conversation fills the common room, underscored by lively music floating down from the ceiling - a halfling band plays, perched in the rafters above.|The scent of sweat, blood, and stale beer stings the nostrils on entry, but it all resolves to a smoky sweetness closer to the kitchens.|Folk from all walks of life crowd the bar and various tables. Adventurers, merchants, strange beastfolk from faraway lands, and even the occasional noble out for a night of slumming around!|The light is low and the air is hazy. Shadows play across the faces of rough-featured travellers and soft, demure serving wenches alike.}
+
++ [Drink]
++ [Ask Around]
+    ~setJobList( jobBank,tavernJobList )
+    
+
+- ->->

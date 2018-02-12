@@ -1,0 +1,12 @@
+=== CutPurseAlley
+
+A seedy alleyway where anything of dubious legality can be found for the right price.
+
+{Hushed whispers and the sound of dripping water echo down the alleyway.|A drawn-out moan emanates down the way. Is it of pleasure, or…?|An eerie silence, sheltered from the noise of the main street.|Urine-soaked stone and discarded garbage make for a lovely back alley bouquet.|Damp and musty, with the ghost of cheap perfume.|Red lights over shadowed doorways. Shapes of either man or beast rummage through discarded crates.|The buildings crowd high overhead, blocking out most of the natural light. A shady place indeed.|...is that blood?}
+
++ [Black Market]
+    ~setJobList( jobBank,alleyJobList )
+
+
+
+- ->->

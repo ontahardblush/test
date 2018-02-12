@@ -1,0 +1,84 @@
+LIST characters = neri, noot
+LIST reserveJobList = none, gutterWench 
+LIST tavernJobList = cleanStables, tavernWaitress
+LIST jobLevel = one, two, (three), four
+LIST jobProgress = (a),b,c,d
+
+LIST cleanse = bath, sleep
+LIST daycount = oneday, twodays, threedays, fourdays
+
+VAR jobBank = ()
+
+=== function selectList(list,count) 
+    {count == 1:    
+            ~ return LIST_MIN(list)
+    - else: 
+            ~ count --
+            ~ return selectList(list - LIST_MIN(list), count)
+    }
+
+=== function setJobList(ref listname,listcheck)
+// ~temp findjob = checkJobRequirement( findJobList(listcheck) )
+~temp findjob = findJobList(listcheck)
+{findjob:
+    ~tavernJobList += findjob
+    ~listname += findjob 
+    Gained Job: {define(findjob,name)}
+-else:
+    ~return false
+}
+
+=== function findJobList(x)
+{ LIST_COUNT(LIST_INVERT(x)) != 0:
+~ return selectList( LIST_INVERT(x),RANDOM(1,LIST_COUNT(LIST_INVERT(x))) )
+}
+
+=== function checkJobRequirement(jobname)
+~temp x = define(jobname,required)
+{ x <= jobLevel and x ^ jobProgress:
+    ~ return jobname
+}
+~ return ()
+
+=== function displayJobRequirement(jobname)
+~temp x = define(jobname,required)
+Requires:
+{ x ^ LIST_ALL(jobProgress):
+    <> {commaList( x ^ LIST_ALL(jobProgress),"" )}.
+}
+{ x ^ LIST_ALL(jobLevel):
+    <> {commaListName( x ^ LIST_ALL(jobLevel),"" )}.
+    
+}
+
+=== function displayTags(taglist)
+~commaListName( taglist,"Clean" )
+
+
+=== function commaListName(list, if_empty) 
+    {LIST_COUNT(list): 
+    - 2: 
+            {define(LIST_MIN(list),name)} and {commaListName(list-LIST_MIN(list), if_empty)} 
+    - 1: 
+            {define(list,name)}
+    - 0: 
+            {if_empty}            
+    - else: 
+            {define(LIST_MIN(list),name)}, {commaListName(list-LIST_MIN(list), if_empty)} 
+}
+
+=== function commaList(list, if_empty) 
+    {LIST_COUNT(list): 
+    - 2: 
+            {LIST_MIN(list)} and {commaList(list - LIST_MIN(list), if_empty)} 
+    - 1: 
+            {list}
+    - 0: 
+            {if_empty}            
+    - else: 
+              {LIST_MIN(list)}, {commaList(list - LIST_MIN(list), if_empty)} 
+}
+
+
+
+

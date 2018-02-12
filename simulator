@@ -1,0 +1,48 @@
+=== function ran(x)
+~return RANDOM(1,x)
+
+=== function jobSuccess(x,y) ==
+{ran(x) >= y:
+    ~return true
+-else: 
+    ~return false
+}
+
+=== cleanStablesJob
+= event
+~latestSuccess = jobSuccess(6,3)
+->->
+
+= success
+    Success
+->->
+= failure
+    Failed
+->->
+
+
+=== tavernWaitressJob
+~latestSuccess = jobSuccess(6,3)
+->->
+=== gutterWenchJob
+~latestSuccess = jobSuccess(6,3)
+->->
+=== homelessHandjobsJob
+~latestSuccess = jobSuccess(6,3)
+->->
+=== maidFreakoutJob
+~latestSuccess = jobSuccess(6,3)
+->->
+=== kcScoutCaveJob
+~latestSuccess = jobSuccess(6,3)
+->->
+=== kcSearchJob
+~latestSuccess = jobSuccess(6,3)
+->->
+=== kcRevengeJob
+~latestSuccess = jobSuccess(6,3)
+->->
+=== kcMeetKingJob 
+~latestSuccess = jobSuccess(6,3)
+->->
+

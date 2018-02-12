@@ -1,0 +1,158 @@
+=== cleanStablesJob 
+{not jobSuccess(6,3):-> failure }
+    ~latestResult = -> talksuccess
+->->
+{shuffle:
+    - -> failure 
+    - 
+    - {~ get extra gold | get some extra flag ->failure|{! get more gold |->failure}}
+}
+
+
+= failure
+    ~latestTag += cumCovered
+    ~latestResult = -> talkfail
+->->
+
+= talkfail
+    A conversation with the character about her time cleaning the stables and getting cummed on by horses.
+->->
+= talksuccess
+    A conversation with the character about her time cleaning the stables and having everything go well.
+->->
+
+
+
+=== tavernWaitressJob
+{not jobSuccess(6,3):-> failure }
+{latestTag ^ (orkStink,cumCovered): -> failure }
+    ~latestResult = -> talksuccess
+->->
+
+= failure
+    ~latestResult = -> talkfail
+->->
+
+= talkfail
+    Failed convo about waitressing
+->->
+
+= talksuccess
+    Success convo about waitressing
+->->
+
+
+
+
+
+
+=== gutterWenchJob
+= event
+{not jobSuccess(6,3):-> failure }
+    ~latestResult = -> talksuccess
+->->
+
+= failure
+    ~latestResult = -> talkfail
+->->
+
+= talkfail
+    Fail convo about gutter wenching
+->->
+
+= talksuccess
+    Success convo about gutter wneching
+->->
+
+
+
+
+
+
+=== homelessHandjobsJob
+= event
+{not jobSuccess(6,3):-> failure }
+    ~latestResult = -> talksuccess
+->->
+
+= failure
+    ~latestResult = -> talkfail
+->->
+
+= talkfail
+    Fail homeless handjobs
+->->
+
+= talksuccess
+    Success homeless handjobs
+->->
+
+
+
+
+=== maidFreakoutJob
+= event
+{not jobSuccess(6,3):-> failure }
+    ~latestResult = -> talksuccess
+->->
+
+= failure
+    ~latestResult = -> talkfail
+->->
+
+= talkfail
+    Failure maid freakout
+->->
+
+
+
+
+
+= talksuccess
+    success maid freakout
+->->
+=== kcScoutCaveJob
+{not jobSuccess(6,3):-> failure }
+    ~latestResult = true
+->->
+
+= failure
+    ~latestResult = false
+->->
+
+=== kcSearchJob
+{not jobSuccess(6,3):-> failure }
+    ~latestResult = true
+->->
+
+= failure
+    ~latestResult = false
+->->
+
+=== kcRevengeJob
+{not jobSuccess(6,3):-> failure }
+    ~latestResult = true
+->->
+
+= failure
+    ~latestResult = false
+->->
+
+=== kcMeetKingJob 
+{not jobSuccess(6,3):-> failure }
+    ~latestResult = true
+->->
+
+= failure
+    ~latestResult = false
+->->
+
+
+
+
+=== function jobSuccess(x,y) ==
+{RANDOM(1,x) >= y:
+    ~return true
+-else: 
+    ~return false
+}
